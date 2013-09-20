@@ -11,6 +11,7 @@ if __name__ == "__main__":
     driver.get("http://www.google.com")
     elem = driver.find_element_by_id("hplogo")
     print driver.current_url
+    print elem.get_attribute("title")
     if elem.get_attribute("title") == "Google":
         print "Good Job !"
     else:
