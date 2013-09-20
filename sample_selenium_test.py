@@ -4,9 +4,14 @@
 from selenium import webdriver
 
 
+print "start"
+
 if __name__ == "__main__":
     driver = webdriver.Firefox()
     driver.get("http://www.google.com")
     elem = driver.find_element_by_id("hplogo")
-    print elem.get_attribute("title")
+    if elem.get_attribute("title") == "Google":
+        pass
+    else:
+        raise AssertionError("poor.")
     driver.quit()
