@@ -14,7 +14,7 @@ if __name__ == "__main__":
     print elem.get_attribute("title")
     print driver.title
     print driver.page_source
-    if elem.get_attribute("title") == "Google":
+    if elem.get_attribute("alt") == "Google":
         print "Good Job !"
     else:
         raise AssertionError("poor.")
