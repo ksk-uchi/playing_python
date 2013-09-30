@@ -29,6 +29,7 @@ class TestSampleSelenium(object):
         self.driver.get("http://gengo.com")
         path = "//*[@id='translation']/p"
         elem = self.driver.find_element_by_xpath(path)
+        print self.driver.get_window_size()
         print self.driver.current_url
         print self.driver.title
         print elem.text
