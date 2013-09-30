@@ -4,18 +4,25 @@
 from selenium import webdriver
 
 
-print "start"
-
 if __name__ == "__main__":
-    driver = webdriver.Firefox()
-    driver.get("http://www.google.com")
-    elem = driver.find_element_by_id("hplogo")
+    fp = webdriver.FirefoxProfile()
+    fp.set_preference("intl.accept_languages", "en-us,en,ja")
+    fp.update_preferences()
+
+    driver = webdriver.Remote(
+        command_executor='http://127.0.0.1:4444/wd/hub',
+        desired_capabilities={
+            'platform': 'ANY',
+            'browserName': 'firefox',
+            'version': '',
+            'javascriptEnabled': True
+        },
+        browser_profile=fp
+    )
+
+    driver.get("http://gengo.com")
+    elem = driver.find_element_by_id("translation")
     print driver.current_url
-    print elem.get_attribute("title")
     print driver.title
-    print driver.page_source
-    if elem.get_attribute("alt") == "Google":
-        print "Good Job !"
-    else:
-        raise AssertionError("poor.")
+    print elem.text
     driver.quit()
