@@ -26,8 +26,8 @@ class TestSampleSelenium(object):
         )
 
     def test_open_gengo(self):
-        self.driver.get("http://gengo.com")
-        elem = self.driver.find_element_by_xpath('//*[@id="translation"]/p')
+        self.driver.get("http://gengo.com/how-it-works/")
+        elem = self.driver.find_element_by_xpath("//*[@id='how-global']/div/p[2]")
         print self.driver.current_url
         print self.driver.title
         print elem.text
