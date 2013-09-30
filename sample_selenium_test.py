@@ -24,6 +24,7 @@ class TestSampleSelenium(object):
             },
             browser_profile=fp
         )
+        self.driver.set_window_size(1200, 647)
 
     def test_open_gengo(self):
         self.driver.get("http://gengo.com")
