@@ -27,12 +27,13 @@ class TestSampleSelenium(object):
 
     def test_open_gengo(self):
         self.driver.get("http://gengo.com")
-        elem = self.driver.find_element_by_id("translation")
+        elem = self.driver.find_element_by_id("youtube")
         print self.driver.current_url
         print self.driver.title
-        childs = elem.find_elements_by_xpath(".//*")
-        for child in childs:
-            print "[CHILD]", child.text
+        # childs = elem.find_elements_by_xpath(".//*")
+        # for child in childs:
+        #     print "[CHILD]", child.text
+        print elem.text
 
     def teardown(self):
         self.driver.quit()
