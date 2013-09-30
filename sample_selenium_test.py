@@ -27,7 +27,7 @@ class TestSampleSelenium(object):
         elem = self.driver.find_element_by_id("translation")
         print self.driver.current_url
         print self.driver.title
-        print elem.text
+        print "Judge: ", elem.text == "Order Translation"
 
     def teardown(self):
         self.driver.quit()
