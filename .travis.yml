@@ -13,4 +13,4 @@ before_script:
 - java -jar ./selenium-server-standalone-2.35.0.jar -port 4444 &
 - sleep 5 # give SSS some time to start
 script:
-- python sample_selenium_test.py
+- nosetests ./ -s -v --nologcapture
