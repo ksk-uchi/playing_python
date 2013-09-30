@@ -30,10 +30,12 @@ class TestSampleSelenium(object):
         elem = self.driver.find_element_by_xpath('//*[@id="translation"]/p')
         print self.driver.current_url
         print self.driver.title
-        # childs = elem.find_elements_by_xpath(".//*")
-        # for child in childs:
-        #     print "[CHILD]", child.text
         print elem.text
+        print elem.is_enabled()
+        print elem.is_displayed()
+        print elem.tag_name
+        print elem.size
+        print elem.location
 
     def teardown(self):
         self.driver.quit()
