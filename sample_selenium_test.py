@@ -1,7 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import sys
 from selenium import webdriver
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 
 class TestSampleSelenium(object):
@@ -28,6 +31,9 @@ class TestSampleSelenium(object):
         print self.driver.current_url
         print self.driver.title
         print "Judge: ", elem.text == "Order Translation"
+        print "================================="
+        print self.driver.page_source
+        print "================================="
 
     def teardown(self):
         self.driver.quit()
