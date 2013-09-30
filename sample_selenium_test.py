@@ -30,10 +30,9 @@ class TestSampleSelenium(object):
         elem = self.driver.find_element_by_id("translation")
         print self.driver.current_url
         print self.driver.title
-        print "Judge: ", elem.text == "Order Translation"
-        print "================================="
-        print self.driver.page_source
-        print "================================="
+        childs = elem.find_elements_by_xpath(".//*")
+        for child in childs:
+            print "[CHILD]", child.text
 
     def teardown(self):
         self.driver.quit()
