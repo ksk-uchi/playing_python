@@ -1,7 +1,10 @@
 ---
 language:
 - python
+- php
 python:
 - '2.7'
+php:
+- '5.3'
 script:
 - /bin/bash ./depends_on_branch.sh
